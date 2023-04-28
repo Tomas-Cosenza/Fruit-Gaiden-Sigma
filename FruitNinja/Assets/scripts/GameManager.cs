@@ -49,11 +49,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void DoLooseScreen()
-    {
-        cg.DOFade(1, 1).SetEase(Ease.InOutExpo).onComplete = (() => LooseScreen());
-
-    }
     private void LooseScreen()
     {
         cg.interactable = true;
