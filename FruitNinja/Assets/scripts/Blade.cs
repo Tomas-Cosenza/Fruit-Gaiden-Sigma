@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Blade : MonoBehaviour
 {
+    [SerializeField] private float mousePosZ;
     private Rigidbody2D rb;
-    public float mousePosZ;
 
     // Start is called before the first frame update
     void Awake()

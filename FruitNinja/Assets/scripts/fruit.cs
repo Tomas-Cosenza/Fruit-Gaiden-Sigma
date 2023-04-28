@@ -5,11 +5,11 @@ using UnityEngine;
 public class fruit : MonoBehaviour
 {
 
-    public GameObject slicedFruitPrefab;
-    public ParticleSystem splash;
+    [SerializeField] private GameObject slicedFruitPrefab;
+    [SerializeField] private ParticleSystem splash;
     [SerializeField] private Vector3 Offset;
-    public float explosionradius = 5f;
-    public GameManager gm;
+    [SerializeField] private float explosionradius = 5f;
+    [SerializeField] private GameManager gm;
 
     public void CreateSlicedFruit()
     {
@@ -28,16 +28,10 @@ public class fruit : MonoBehaviour
 
         Destroy(inst, 5f);
         Destroy(splashIns, 2f);
-
         Destroy(gameObject);
 
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
