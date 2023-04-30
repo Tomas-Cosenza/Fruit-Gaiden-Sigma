@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         DOTween.Init();
 
         leftDoor.transform.DOMove(leftDoorOpenPos.position, .5f).SetEase(Ease.InOutExpo);
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void onBombHit() 
     {
+
         blade.SetActive(false);
         leftDoor.transform.DOMove(leftDoorClosedPos.position, 1.5f).SetEase(Ease.InExpo);
         rightDoor.transform.DOMove(rightDoorClosedPos.position, 1.5f).SetEase(Ease.InExpo).onComplete = (()=> cg.DOFade(1, 1).SetEase(Ease.InOutExpo).onComplete = (() => LooseScreen()));
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     private void LooseScreen()
     {
+
+        Cursor.visible = true;
         cg.interactable = true;
         Time.timeScale = 0;
     }
